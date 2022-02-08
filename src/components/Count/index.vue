@@ -1,30 +1,24 @@
 <script setup lang="ts">
-import { ref, ObjectDirective } from 'vue'
-import VueLogo from '@/assets/logo.png'
+import { useCount } from './useCount'
+import { vMarker } from './directives'
 
 defineProps<{ msg: string }>()
 
-const count = ref(0)
-
-const increment = () => {
-  count.value++
-}
-
-const vMarker: ObjectDirective = {
-  mounted: (el: HTMLElement) => {
-    el.style.backgroundImage = `url(${VueLogo})`
-    el.style.backgroundPosition = 'center'
-    el.style.backgroundSize = 'contain'
-  }
-}
+const { count, increment } = useCount()
 
 defineExpose({
-  increment
+    increment
 })
 </script>
 
 <template>
-  <button v-marker="null" type="button" @click="increment">count is: {{ count }}</button>
+    <button 
+        v-marker="null" 
+        type="button" 
+        @click="increment"
+    >
+        {{ msg }} count is: {{ count }}
+    </button>
 </template>
 
 <style scoped>

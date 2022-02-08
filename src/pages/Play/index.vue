@@ -1,5 +1,6 @@
 <script setup lang="ts" name="play">
 import Book from '@/components/Book/index.vue'
+import Father from '@/components/Father/index.vue'
 </script>
 
 <template>
@@ -10,6 +11,7 @@ import Book from '@/components/Book/index.vue'
         <br>
         <br>
         <Book />
+        <Father />
     </div>
 </template>
 

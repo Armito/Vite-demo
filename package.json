@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^7.5.5",
+    "element-plus": "^2.0.1",
     "pinia": "^2.0.9",
     "vue": "^3.2.25",
     "vue-router": "4"

@@ -20,6 +20,16 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
+"@ctrl/tinycolor@^3.4.0":
+  version "3.4.0"
+  resolved "http://npm.fe.flyudesk.com/@ctrl%2ftinycolor/-/tinycolor-3.4.0.tgz#c3c5ae543c897caa9c2a68630bed355be5f9990f"
+  integrity sha1-w8WuVDyJfKqcKmhjC+01W+X5mQ8=
+
+"@element-plus/icons-vue@^0.2.6":
+  version "0.2.7"
+  resolved "http://npm.fe.flyudesk.com/@element-plus%2ficons-vue/-/icons-vue-0.2.7.tgz#c0b75363098bf1fba414e18706604bfe5057ae1b"
+  integrity sha512-S8kDbfVaWkQvbUYQE1ui448tzaHfUvyESCep9J6uPRlViyQPXjdIfwLBhV6AmQSOfFS8rL+xehJGhvzPXLrSBg==
+
 "@emmetio/abbreviation@^2.2.2":
   version "2.2.2"
   resolved "http://npm.fe.flyudesk.com/@emmetio%2fabbreviation/-/abbreviation-2.2.2.tgz#746762fd9e7a8c2ea604f580c62e3cfe250e6989"
@@ -38,6 +48,11 @@
   version "1.0.0"
   resolved "http://npm.fe.flyudesk.com/@emmetio%2fscanner/-/scanner-1.0.0.tgz#065b2af6233fe7474d44823e3deb89724af42b5f"
   integrity sha1-Blsq9iM/50dNRII+PeuJckr0K18=
+
+"@popperjs/core@^2.11.2":
+  version "2.11.2"
+  resolved "http://npm.fe.flyudesk.com/@popperjs%2fcore/-/core-2.11.2.tgz#830beaec4b4091a9e9398ac50f865ddea52186b9"
+  integrity sha512-92FRmppjjqz29VMJ2dn+xdyXZBrMlE42AV6Kq6BwjWV7CNUW1hs2FtxSNLQE+gJhaZ6AAmYuO9y8dshhcBl7vA==
 
 "@types/node@^17.0.12":
   version "17.0.12"
@@ -241,6 +256,11 @@ assert-never@^1.2.1:
   resolved "http://npm.fe.flyudesk.com/assert-never/-/assert-never-1.2.1.tgz#11f0e363bf146205fb08193b5c7b90f4d1cf44fe"
   integrity sha1-EfDjY78UYgX7CBk7XHuQ9NHPRP4=
 
+async-validator@^4.0.7:
+  version "4.0.7"
+  resolved "http://npm.fe.flyudesk.com/async-validator/-/async-validator-4.0.7.tgz#034a0fd2103a6b2ebf010da75183bec299247afe"
+  integrity sha1-A0oP0hA6ay6/AQ2nUYO+wpkkev4=
+
 babel-walk@3.0.0-canary-5:
   version "3.0.0-canary-5"
   resolved "http://npm.fe.flyudesk.com/babel-walk/-/babel-walk-3.0.0-canary-5.tgz#f66ecd7298357aee44955f235a6ef54219104b11"
@@ -276,6 +296,11 @@ csstype@^2.6.8:
   resolved "http://npm.fe.flyudesk.com/csstype/-/csstype-2.6.19.tgz#feeb5aae89020bb389e1f63669a5ed490e391caa"
   integrity sha1-/utarokCC7OJ4fY2aaXtSQ45HKo=
 
+dayjs@^1.10.7:
+  version "1.10.7"
+  resolved "http://npm.fe.flyudesk.com/dayjs/-/dayjs-1.10.7.tgz#2cf5f91add28116748440866a0a1d26f3a6ce468"
+  integrity sha1-LPX5Gt0oEWdIRAhmoKHSbzps5Gg=
+
 doctypes@^1.1.0:
   version "1.1.0"
   resolved "http://npm.fe.flyudesk.com/doctypes/-/doctypes-1.1.0.tgz#ea80b106a87538774e8a3a4a5afe293de489e0a9"
@@ -310,6 +335,21 @@ domutils@^2.8.0:
     dom-serializer "^1.0.1"
     domelementtype "^2.2.0"
     domhandler "^4.2.0"
+
+element-plus@^2.0.1:
+  version "2.0.1"
+  resolved "http://npm.fe.flyudesk.com/element-plus/-/element-plus-2.0.1.tgz#0ac58a45454bc17558f66b477e0233bddc18b7be"
+  integrity sha512-Cdx3JhbMNGwVsU12DUewIltJ1hUYVSgx2iBB8AuNzzOxAqcxSA9e7p2lfNp8oCBQeh4ThRSaOkdLnJyO4mS3qQ==
+  dependencies:
+    "@ctrl/tinycolor" "^3.4.0"
+    "@element-plus/icons-vue" "^0.2.6"
+    "@popperjs/core" "^2.11.2"
+    "@vueuse/core" "^7.5.5"
+    async-validator "^4.0.7"
+    dayjs "^1.10.7"
+    lodash "^4.17.21"
+    memoize-one "^6.0.0"
+    normalize-wheel-es "^1.1.1"
 
 emmet@^2.3.0:
   version "2.3.5"
@@ -546,6 +586,11 @@ jstransformer@1.0.0:
     is-promise "^2.0.0"
     promise "^7.0.1"
 
+lodash@^4.17.21:
+  version "4.17.21"
+  resolved "http://npm.fe.flyudesk.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha1-Z5WRxWTDv/quhFTPCz3zcMPWkRw=
+
 lru-cache@^6.0.0:
   version "6.0.0"
   resolved "http://npm.fe.flyudesk.com/lru-cache/-/lru-cache-6.0.0.tgz#6d6fe6570ebd96aaf90fcad1dafa3b2566db3a94"
@@ -560,10 +605,20 @@ magic-string@^0.25.7:
   dependencies:
     sourcemap-codec "^1.4.4"
 
+memoize-one@^6.0.0:
+  version "6.0.0"
+  resolved "http://npm.fe.flyudesk.com/memoize-one/-/memoize-one-6.0.0.tgz#b2591b871ed82948aee4727dc6abceeeac8c1045"
+  integrity sha1-slkbhx7YKUiu5HJ9xqvO7qyMEEU=
+
 nanoid@^3.1.30:
   version "3.2.0"
   resolved "http://npm.fe.flyudesk.com/nanoid/-/nanoid-3.2.0.tgz#62667522da6673971cca916a6d3eff3f415ff80c"
   integrity sha512-fmsZYa9lpn69Ad5eDn7FMcnnSR+8R34W9qJEijxYhTbfOWzr22n1QxCMzXLK+ODyW2973V3Fux959iQoUxzUIA==
+
+normalize-wheel-es@^1.1.1:
+  version "1.1.1"
+  resolved "http://npm.fe.flyudesk.com/normalize-wheel-es/-/normalize-wheel-es-1.1.1.tgz#a8096db6a56f94332d884fd8ebeda88f2fc79569"
+  integrity sha512-157VNH4CngrcsvF8xOVOe22cwniIR3nxSltdctvQeHZj8JttEeOXffK28jucWfWBXs0QNetAumjc1GiInnwX4w==
 
 object-assign@^4.1.1:
   version "4.1.1"

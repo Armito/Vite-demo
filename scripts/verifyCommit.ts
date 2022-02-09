@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const msg = require('fs').readFileSync('.git/COMMIT_EDITMSG', 'utf-8').trim()
 
 const commitRE =

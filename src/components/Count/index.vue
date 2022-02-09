@@ -11,7 +11,7 @@ defineExpose({
 </script>
 
 <template>
-    <button v-marker="null" type="button" @click="increment">
+    <button v-marker type="button" @click="increment">
         {{ msg }} count is: {{ count }}
     </button>
 </template>

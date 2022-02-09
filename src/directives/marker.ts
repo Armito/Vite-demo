@@ -1,5 +1,5 @@
 import { ObjectDirective } from 'vue'
-import VueLogo from '@/assets/logo.png'
+import VueLogo from '@/assets/img/logo.png'
 
 export const vMarker: ObjectDirective = {
     mounted: (el: HTMLElement) => {

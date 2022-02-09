@@ -2,25 +2,27 @@ import { defineStore } from 'pinia'
 import { useSessionStorage } from '@vueuse/core'
 
 interface BookParams {
-    newBookTitle: string;
-    newBookPrice: number;
-    success?: () => void;
+    newBookTitle: string
+    newBookPrice: number
+    success?: () => void
 }
 
 interface Book {
-    id: string;
-    title: string;
-    price?: number;
+    id: string
+    title: string
+    price?: number
 }
 
 export const useBookStore = defineStore('book', () => {
-    const initialBookList: Book[] = JSON.parse(sessionStorage.getItem('bookList') || '[]')
-    
+    const initialBookList: Book[] = JSON.parse(
+        sessionStorage.getItem('bookList') || '[]'
+    )
+
     const bookList = useSessionStorage<Book[]>('bookList', initialBookList)
 
-    const addBook = ({ 
-        newBookTitle, 
-        newBookPrice, 
+    const addBook = ({
+        newBookTitle,
+        newBookPrice,
         success = () => {}
     }: BookParams) => {
         if (checkBookParams({ newBookTitle, newBookPrice })) {
@@ -46,8 +48,8 @@ export const useBookStore = defineStore('book', () => {
     }
 
     return {
-        bookList, 
-        checkBookParams, 
+        bookList,
+        checkBookParams,
         addBook
     }
 })

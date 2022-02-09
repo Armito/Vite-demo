@@ -15,7 +15,7 @@ const directivesArray = [
 
 export default {
     install: (app: App<Element>) => {
-        directivesArray.forEach((d) => {
+        directivesArray.forEach(d => {
             app.directive(d.name, d.directive)
         })
     }

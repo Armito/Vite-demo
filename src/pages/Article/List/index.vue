@@ -1,9 +1,5 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts" name="articleList"></script>
 
 <template>
-    <div>
-        List
-    </div>
+    <div>List</div>
 </template>

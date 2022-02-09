@@ -33,35 +33,26 @@ const addBook = () => {
 
 <template>
     书名
-    <input 
-        v-model="newBook.newBookTitle" 
-        v-focus
+    <input
         ref="bookTitleInput"
+        v-model="newBook.newBookTitle"
+        v-focus
         type="text"
-        @keydown.enter="bookTitleDone" 
+        @keydown.enter="bookTitleDone"
     />
     价格
-    <input 
-        v-model="newBook.newBookPrice" 
-        ref="bookPriceInput" 
-        type="number" 
-        @keydown.enter="addBook" 
+    <input
+        ref="bookPriceInput"
+        v-model="newBook.newBookPrice"
+        type="number"
+        @keydown.enter="addBook"
     />
-    <br>
-    <br>
-    <button 
-        type="button" 
-        @click="addBook"
-    >
-        添加
-    </button>
-    <div 
-        v-for="book in bookList" 
-        :key="book.id"
-    >
+    <br />
+    <br />
+    <button type="button" @click="addBook">添加</button>
+    <div v-for="book in bookList" :key="book.id">
         {{ book.title }} : ￥{{ book.price || '?' }}
     </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

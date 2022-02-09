@@ -2,12 +2,13 @@
 import { ref, useAttrs, useSlots } from 'vue'
 
 interface SlotsProps {
-    name?: string;
-    hobby?: string[];
+    name?: string
+    hobby?: string[]
 }
 
 const slotsProps = withDefaults(defineProps<SlotsProps>(), {
-    name: 'Armito'
+    name: 'Armito',
+    hobby: () => []
 })
 
 const age = ref(18)
@@ -34,5 +35,4 @@ console.log('slots:', slots)
     </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

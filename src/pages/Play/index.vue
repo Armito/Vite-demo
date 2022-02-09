@@ -7,13 +7,13 @@ import Slots from '@/components/Slots/index.vue'
 <template>
     <div>
         Just Play!
-        <br>
+        <br />
         Enjoy Yourself!
-        <br>
-        <br>
+        <br />
+        <br />
         <Book />
         <Father />
-        <Slots class="aaa" name="Pikachu" :hobby="['game']" @change="">
+        <Slots class="aaa" name="Pikachu" :hobby="['game']">
             <template #header="{ name, hobby }">
                 <div>header</div>
                 <div>{{ name }}</div>
@@ -26,5 +26,4 @@ import Slots from '@/components/Slots/index.vue'
     </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

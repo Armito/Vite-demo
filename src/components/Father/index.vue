@@ -5,16 +5,15 @@ import Count from '../Count/index.vue'
 const countRef = ref()
 
 const plus = () => {
-  countRef.value.increment?.()
+    countRef.value.increment?.()
 }
 </script>
 
 <template>
-  <Count ref="countRef" msg="father call" />
-  <div>
-    <el-button @click="plus">+++</el-button>
-  </div>
+    <Count ref="countRef" msg="father call" />
+    <div>
+        <el-button @click="plus">+++</el-button>
+    </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

@@ -1,5 +1,10 @@
 <template>
-    <router-view></router-view>
+    <el-container>
+        <el-header>Header</el-header>
+        <el-main>
+            <router-view></router-view>
+        </el-main>
+    </el-container>
 </template>
 
 <style>

@@ -1,4 +1,4 @@
-<script setup lang="ts" name="book">
+<script setup lang="ts">
 import { computed, reactive, ref } from 'vue'
 import { useBookStore } from '@/store/bookStore'
 
@@ -8,7 +8,9 @@ const newBook = reactive({
     newBookTitle: '',
     newBookPrice: 0
 })
+
 const bookStore = useBookStore()
+
 const bookList = computed(() => bookStore.bookList)
 
 const bookTitleDone = () => {
@@ -18,14 +20,14 @@ const bookTitleDone = () => {
 }
 
 const addBook = () => {
-   bookStore.addBook({
+    bookStore.addBook({
         ...newBook,
         success: () => {
             newBook.newBookTitle = ''
             newBook.newBookPrice = 0
             bookTitleInput.value.focus()
         }
-   }) 
+    })
 }
 </script>
 

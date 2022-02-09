@@ -32,7 +32,7 @@ export const useBookStore = defineStore('book', () => {
             success()
         }
     }
-    
+
     const checkBookParams = ({ newBookTitle, newBookPrice }: BookParams) => {
         if (!newBookTitle.trim()) {
             alert('书名不能为空！')
@@ -45,7 +45,7 @@ export const useBookStore = defineStore('book', () => {
         return true
     }
 
-    return { 
+    return {
         bookList, 
         checkBookParams, 
         addBook

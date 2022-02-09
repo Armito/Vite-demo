@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useCount } from './useCount'
-import { vMarker } from './directives'
 
 defineProps<{ msg: string }>()
 

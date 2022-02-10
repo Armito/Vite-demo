@@ -1,17 +1,19 @@
 import { defineStore } from 'pinia'
 import { useSessionStorage } from '@vueuse/core'
 
+interface Book {
+    id: string
+    title: string
+    price?: number
+}
+
 interface BookParams {
     newBookTitle: string
     newBookPrice: number
     success?: () => void
 }
 
-interface Book {
-    id: string
-    title: string
-    price?: number
-}
+type CheckBookParams = Omit<BookParams, 'success'>
 
 export const useBookStore = defineStore('book', () => {
     const initialBookList: Book[] = JSON.parse(
@@ -35,7 +37,10 @@ export const useBookStore = defineStore('book', () => {
         }
     }
 
-    const checkBookParams = ({ newBookTitle, newBookPrice }: BookParams) => {
+    const checkBookParams = ({
+        newBookTitle,
+        newBookPrice
+    }: CheckBookParams) => {
         if (!newBookTitle.trim()) {
             alert('书名不能为空！')
             return false

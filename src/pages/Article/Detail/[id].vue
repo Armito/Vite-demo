@@ -2,10 +2,10 @@
 import { useRoute } from 'vue-router'
 
 const {
-    params: { id }
+    params: { id: articleId }
 } = useRoute()
 </script>
 
 <template>
-    <div>Detail: {{ id }}</div>
+    <div>Detail: {{ articleId }}</div>
 </template>

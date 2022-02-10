@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { useCount } from './useCount'
+import { CountProps } from './data'
 
-defineProps<{ msg: string }>()
+defineProps<CountProps>()
 
 const { count, increment } = useCount()
 

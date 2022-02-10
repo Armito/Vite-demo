@@ -1,11 +1,7 @@
 <script setup lang="ts" name="articleList">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-
-interface Article {
-    title: string
-    id: number
-}
+import { Article } from '../data'
 
 const articleList = ref<Article[]>([
     {

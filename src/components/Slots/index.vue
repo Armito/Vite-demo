@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import { ref, useAttrs, useSlots } from 'vue'
-
-interface SlotsProps {
-    name?: string
-    hobby?: string[]
-}
+import { SlotsProps } from './data'
 
 const slotsProps = withDefaults(defineProps<SlotsProps>(), {
     name: 'Armito',

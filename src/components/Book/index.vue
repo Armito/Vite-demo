@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, reactive, ref } from 'vue'
-import { useBookStore } from '@/store/bookStore'
+import { useBookStore } from '@/store/bookstore'
 
 const bookTitleInput = ref()
 const bookPriceInput = ref()

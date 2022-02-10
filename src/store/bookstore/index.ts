@@ -1,19 +1,6 @@
 import { defineStore } from 'pinia'
 import { useSessionStorage } from '@vueuse/core'
-
-interface Book {
-    id: string
-    title: string
-    price?: number
-}
-
-interface BookParams {
-    newBookTitle: string
-    newBookPrice: number
-    success?: () => void
-}
-
-type CheckBookParams = Omit<BookParams, 'success'>
+import { Book, BookParams, CheckBookParams } from './data'
 
 export const useBookStore = defineStore('book', () => {
     const initialBookList: Book[] = JSON.parse(

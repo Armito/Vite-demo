@@ -3,11 +3,7 @@ import { useSessionStorage } from '@vueuse/core'
 import { Book, BookParams, CheckBookParams } from './data'
 
 export const useBookStore = defineStore('book', () => {
-    const initialBookList: Book[] = JSON.parse(
-        sessionStorage.getItem('bookList') || '[]'
-    )
-
-    const bookList = useSessionStorage<Book[]>('bookList', initialBookList)
+    const bookList = useSessionStorage<Book[]>('bookList', [])
 
     const addBook = ({
         newBookTitle,

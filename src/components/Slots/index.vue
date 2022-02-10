@@ -1,11 +1,16 @@
 <script setup lang="ts">
 import { ref, useAttrs, useSlots } from 'vue'
-import { SlotsProps } from './data'
 
-const slotsProps = withDefaults(defineProps<SlotsProps>(), {
-    name: 'Armito',
-    hobby: () => []
-})
+const slotsProps = withDefaults(
+    defineProps<{
+        name?: string
+        hobby?: string[]
+    }>(),
+    {
+        name: 'Armito',
+        hobby: () => []
+    }
+)
 
 const age = ref(18)
 

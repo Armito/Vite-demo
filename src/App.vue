@@ -1,6 +1,6 @@
 <template>
     <el-container>
-        <el-header>Header</el-header>
+        <el-header>Vue3 Research</el-header>
         <el-main>
             <router-view></router-view>
         </el-main>

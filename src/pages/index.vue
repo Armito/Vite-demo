@@ -1,11 +1,38 @@
 <script setup lang="ts" name="homePage">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 
-const count = ref(0)
+interface JumpBtn {
+    label: string
+    path: string
+}
+
+const jumpBtns = ref<JumpBtn[]>([
+    {
+        label: 'To play',
+        path: '/play'
+    },
+    {
+        label: 'To article list',
+        path: '/article/list'
+    }
+])
+
+const router = useRouter()
+
+const jump = (path: string) => {
+    router.push(path)
+}
 </script>
 
 <template>
-    <button type="button" @click="count++">count is: {{ count }}</button>
+    <el-space wrap>
+        <div v-for="btn in jumpBtns" :key="btn.label">
+            <el-button type="primary" @click="jump(btn.path)">
+                {{ btn.label }}
+            </el-button>
+        </div>
+    </el-space>
 </template>
 
 <style scoped>

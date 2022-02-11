@@ -23,10 +23,15 @@ export const useCount = () => {
         count.value = count.value * 2
     }
 
+    const divide = () => {
+        count.value = count.value / 2
+    }
+
     return {
         count,
         increment,
         decrement,
-        double
+        double,
+        divide
     }
 }

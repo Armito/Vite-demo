@@ -18,7 +18,7 @@ withDefaults(
     }
 )
 
-const { count, increment, decrement, double } = useCount()
+const { count, increment, decrement, double, divide } = useCount()
 
 defineExpose({
     increment
@@ -37,6 +37,7 @@ defineExpose({
     <el-button type="success" @click="increment">+++</el-button>
     <el-button type="danger" @click="decrement">---</el-button>
     <el-button type="warning" @click="double">x2</el-button>
+    <el-button type="default" @click="divide">/2</el-button>
 </template>
 
 <style scoped></style>

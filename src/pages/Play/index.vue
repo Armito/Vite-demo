@@ -2,6 +2,9 @@
 import Book from '@/components/Book/index.vue'
 import Father from '@/components/Father/index.vue'
 import Slots from '@/components/Slots/index.vue'
+import { useImmutable } from '@/utils/immutable'
+
+useImmutable()
 </script>
 
 <template>

@@ -6,6 +6,7 @@ const {
     bookPriceInput,
     newBook,
     bookList,
+    bookNum,
     bookTitleDone,
     addBook
 } = useBook()
@@ -33,6 +34,7 @@ const {
     <div v-for="book in bookList" :key="book.id">
         {{ book.title }} : ￥{{ book.price || '?' }}
     </div>
+    <div>共{{ bookNum }}本</div>
 </template>
 
 <style scoped></style>

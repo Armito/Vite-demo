@@ -15,6 +15,8 @@ export const useBook = () => {
 
     const bookList = computed(() => bookStore.bookList)
 
+    const bookNum = computed(() => bookStore.bookList.length)
+
     const bookTitleDone = () => {
         if (bookStore.checkBookParams(newBook)) {
             bookPriceInput.value.focus()
@@ -37,6 +39,7 @@ export const useBook = () => {
         bookPriceInput,
         newBook,
         bookList,
+        bookNum,
         bookTitleDone,
         addBook
     }

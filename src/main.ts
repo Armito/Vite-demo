@@ -6,14 +6,9 @@ import registerDirectives from './directives'
 import elementPlus from 'element-plus'
 import 'element-plus/theme-chalk/index.css'
 
-const app = createApp(App)
-
-app.use(router)
-
-app.use(createPinia())
-
-app.use(registerDirectives)
-
-app.use(elementPlus)
-
-app.mount('#app')
+createApp(App)
+    .use(router)
+    .use(createPinia())
+    .use(registerDirectives)
+    .use(elementPlus)
+    .mount('#app')

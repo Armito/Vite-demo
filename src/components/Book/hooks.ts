@@ -1,5 +1,6 @@
 import { computed, reactive, ref } from 'vue'
 import { useBookStore } from '@/store/bookStore'
+import { BookParams } from '@/types/global'
 
 export const useBook = () => {
     const bookTitleInput = ref()

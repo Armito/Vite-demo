@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import { useSessionStorage } from '@vueuse/core'
+import { Book, BookParams } from '@/types/global'
 
 export const useBookStore = defineStore('book', () => {
     const bookList = useSessionStorage<Book[]>('bookList', [])

@@ -1,14 +1,14 @@
-interface Article {
+export interface Article {
     title: string
     id: number
 }
 
-interface Book {
+export interface Book {
     id: string
     title: string
     price?: number
 }
 
-type BookParams = Omit<Book, 'id'> & {
+export type BookParams = Omit<Book, 'id'> & {
     success?: () => void
 }

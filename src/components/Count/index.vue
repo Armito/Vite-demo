@@ -7,9 +7,9 @@
  * @FilePath: \Vite-demo\src\components\Count\index.vue
 -->
 <script setup lang="ts">
-import { useCount } from './useCount'
+import { useCount, useMessage } from './hooks'
 
-withDefaults(
+const propsWithDefaults = withDefaults(
     defineProps<{
         msg: string
     }>(),
@@ -19,6 +19,8 @@ withDefaults(
 )
 
 const { count, increment, decrement, double, divide } = useCount()
+
+const { message, handleMsg } = useMessage(propsWithDefaults)
 
 defineExpose({
     increment
@@ -31,7 +33,9 @@ defineExpose({
             <div v-marker>加减乘除</div>
         </template>
         <template #default>
-            <div>{{ msg }} count is: {{ count }}</div>
+            <div>{{ message }} count is: {{ count }}</div>
+            <div>{{ handleMsg(msg) }} count is: {{ count }}</div>
+            <div>{{ propsWithDefaults.msg }} count is: {{ count }}</div>
         </template>
     </el-card>
     <el-button type="success" @click="increment">+++</el-button>

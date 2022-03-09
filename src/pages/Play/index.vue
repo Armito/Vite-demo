@@ -2,9 +2,12 @@
 import Book from '@/components/Book/index.vue'
 import Father from '@/components/Father/index.vue'
 import Slots from '@/components/Slots/index.vue'
+import Comp from '@/components/Comp/index.vue'
 import { useImmutable } from '@/utils/immutable'
+import { useRx } from '@/utils/rx'
 
 useImmutable()
+useRx()
 </script>
 
 <template>
@@ -26,6 +29,7 @@ useImmutable()
                 <div>footer</div>
             </template>
         </Slots>
+        <Comp />
     </div>
 </template>
 

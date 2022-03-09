@@ -1,41 +1,21 @@
-<script setup lang="ts">
-import { computed, reactive, ref } from 'vue'
-import { useBookStore } from '@/store/bookStore'
+<script setup lang="ts" name="book">
+import { useBook } from './hooks'
 
-const bookTitleInput = ref()
-const bookPriceInput = ref()
-const newBook = reactive({
-    newBookTitle: '',
-    newBookPrice: 0
-})
-
-const bookStore = useBookStore()
-
-const bookList = computed(() => bookStore.bookList)
-
-const bookTitleDone = () => {
-    if (bookStore.checkBookParams(newBook)) {
-        bookPriceInput.value.focus()
-    }
-}
-
-const addBook = () => {
-    bookStore.addBook({
-        ...newBook,
-        success: () => {
-            newBook.newBookTitle = ''
-            newBook.newBookPrice = 0
-            bookTitleInput.value.focus()
-        }
-    })
-}
+const {
+    bookTitleInput,
+    bookPriceInput,
+    newBook,
+    bookList,
+    bookTitleDone,
+    addBook
+} = useBook()
 </script>
 
 <template>
     书名
     <input
         ref="bookTitleInput"
-        v-model="newBook.newBookTitle"
+        v-model="newBook.title"
         v-focus
         type="text"
         @keydown.enter="bookTitleDone"
@@ -43,7 +23,7 @@ const addBook = () => {
     价格
     <input
         ref="bookPriceInput"
-        v-model="newBook.newBookPrice"
+        v-model="newBook.price"
         type="number"
         @keydown.enter="addBook"
     />

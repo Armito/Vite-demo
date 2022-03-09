@@ -1,7 +1,7 @@
 <script setup lang="ts" name="homePage">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { JumpBtn } from './data'
+import { JumpBtn } from './types'
 
 const jumpBtns = ref<JumpBtn[]>([
     {

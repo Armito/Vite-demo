@@ -1820,6 +1820,13 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
+rxjs@^7.5.4:
+  version "7.5.4"
+  resolved "http://npm.fe.flyudesk.com/rxjs/-/rxjs-7.5.4.tgz#3d6bd407e6b7ce9a123e76b1e770dc5761aa368d"
+  integrity sha512-h5M3Hk78r6wAheJF0a5YahB1yRQKCsZ4MsGdZ5O9ETbVtjPcScGfrMmoOq7EBsCRzd4BDkvDJ7ogP8Sz5tTFiQ==
+  dependencies:
+    tslib "^2.1.0"
+
 semver@^7.3.5:
   version "7.3.5"
   resolved "http://npm.fe.flyudesk.com/semver/-/semver-7.3.5.tgz#0b621c879348d8998e4b0e4be94b3f12e6018ef7"
@@ -1934,6 +1941,11 @@ tslib@^1.8.1:
   version "1.14.1"
   resolved "http://npm.fe.flyudesk.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha1-zy04vcNKE0vK8QkcQfZhni9nLQA=
+
+tslib@^2.1.0:
+  version "2.3.1"
+  resolved "http://npm.fe.flyudesk.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
+  integrity sha1-6KM1rdXOrlGqJh0ypJAVjvBC7wE=
 
 tsutils@^3.21.0:
   version "3.21.0"

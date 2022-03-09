@@ -7,9 +7,10 @@
  * @FilePath: \Vite-demo\src\components\Count\useCount.ts
  */
 import { ref } from 'vue'
+import { Props, PropsValueTypeOfMsg } from './types'
 
 export const useCount = () => {
-    const count = ref(0)
+    const count = ref<number>(0)
 
     const increment = () => {
         count.value++
@@ -33,5 +34,16 @@ export const useCount = () => {
         decrement,
         double,
         divide
+    }
+}
+
+export const useMessage = (propsWithDefaults: Props) => {
+    const handleMsg = (msg: PropsValueTypeOfMsg) => {
+        return msg + '4'
+    }
+
+    return {
+        message: propsWithDefaults.msg,
+        handleMsg
     }
 }

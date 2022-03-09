@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, useAttrs, useSlots } from 'vue'
+import { useSlot } from './hooks'
 
 const slotsProps = withDefaults(
     defineProps<{
@@ -12,13 +12,7 @@ const slotsProps = withDefaults(
     }
 )
 
-const age = ref(18)
-
-const attrs = useAttrs()
-console.log('attrs:', attrs)
-
-const slots = useSlots()
-console.log('slots:', slots)
+const { age } = useSlot()
 </script>
 
 <template>

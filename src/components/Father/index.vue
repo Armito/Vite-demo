@@ -1,15 +1,8 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-import Count from '../Count/index.vue'
+<script setup lang="ts" name="father">
+import Count from '@/components/Count/index.vue'
+import { useFather } from './hooks'
 
-const countRef = ref()
-
-const msg = ref('Armito call 2')
-
-const plus = () => {
-    countRef.value.increment?.()
-    msg.value = msg.value + '3'
-}
+const { countRef, msg, plus } = useFather()
 </script>
 
 <template>

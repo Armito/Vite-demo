@@ -1,13 +1,11 @@
 <script setup lang="ts" name="play">
 import Book from '@/components/Book/index.vue'
 import Father from '@/components/Father/index.vue'
-import Slots from '@/components/Slots/index.vue'
+import Slot from '@/components/Slot/index.vue'
 import Comp from '@/components/Comp/index.vue'
-import { useImmutable } from '@/utils/immutable'
-import { useRx } from '@/utils/rx'
+import { usePlay } from './hooks'
 
-useImmutable()
-useRx()
+usePlay()
 </script>
 
 <template>
@@ -19,7 +17,7 @@ useRx()
         <br />
         <Book />
         <Father />
-        <Slots class="aaa" name="Pikachu" :hobby="['game']">
+        <Slot class="aaa" name="Pikachu" :hobby="['game']">
             <template #header="{ name, hobby }">
                 <div>header</div>
                 <div>{{ name }}</div>
@@ -28,7 +26,7 @@ useRx()
             <template #footer>
                 <div>footer</div>
             </template>
-        </Slots>
+        </Slot>
         <Comp />
     </div>
 </template>

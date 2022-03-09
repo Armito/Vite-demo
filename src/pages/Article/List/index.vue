@@ -1,5 +1,6 @@
 <script setup lang="ts" name="articleList">
-import { useList } from './hook'
+import { useList } from './hooks'
+
 const { articleList, checkDetail } = useList()
 </script>
 

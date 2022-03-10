@@ -13,6 +13,7 @@
         "@vueuse/core": "^7.5.5",
         "element-plus": "^2.0.1",
         "immutable": "^4.0.0",
+        "moment": "^2.29.1",
         "pinia": "^2.0.9",
         "rxjs": "^7.5.4",
         "vue": "^3.2.25",

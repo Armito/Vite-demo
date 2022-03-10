@@ -15,6 +15,10 @@ export const usePage = () => {
         {
             label: 'To note list',
             path: '/note'
+        },
+        {
+            label: 'To playtwo',
+            path: '/playTwo'
         }
     ])
 

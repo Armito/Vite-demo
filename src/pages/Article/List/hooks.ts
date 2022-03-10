@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { Article } from '@/types/global'
+import { Article } from '@/types/types'
 
 export const useList = () => {
     const articleList = ref<Article[]>([

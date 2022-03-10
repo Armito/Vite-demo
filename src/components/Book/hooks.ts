@@ -1,9 +1,10 @@
 import { computed, reactive, ref } from 'vue'
 import { useBookStore } from '@/store/bookStore'
-import { BookParams } from '@/types/global'
+import { BookParams } from '@/types/types'
 
 export const useBook = () => {
     const bookTitleInput = ref()
+
     const bookPriceInput = ref()
 
     const newBook = reactive<BookParams>({

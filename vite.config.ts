@@ -9,7 +9,7 @@ export default defineConfig({
         vue(),
         VueSetupExtend(),
         Pages({
-            exclude: ['**/components/*.vue']
+            exclude: ['**/components/*.vue', '**/hooks/*.vue']
         })
     ],
     resolve: {

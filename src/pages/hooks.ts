@@ -1,9 +1,9 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { JumpBtn } from './types'
+import { JumpRoute } from '@/types/types'
 
 export const usePage = () => {
-    const jumpBtns = ref<JumpBtn[]>([
+    const jumpBtns = ref<JumpRoute[]>([
         {
             label: 'To play',
             path: '/play'

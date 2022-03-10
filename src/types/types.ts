@@ -1,3 +1,8 @@
+export interface JumpRoute {
+    label: string
+    path: string
+}
+
 export interface Article {
     title: string
     id: number

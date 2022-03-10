@@ -5,7 +5,7 @@ import Slot from '@/components/Slot/index.vue'
 import Comp from '@/components/Comp/index.vue'
 import { usePlay } from './hooks'
 
-usePlay()
+const { count } = usePlay()
 </script>
 
 <template>
@@ -28,6 +28,7 @@ usePlay()
             </template>
         </Slot>
         <Comp />
+        {{ count }}
     </div>
 </template>
 

@@ -11,6 +11,10 @@ export const usePage = () => {
         {
             label: 'To article list',
             path: '/article/list'
+        },
+        {
+            label: 'To note list',
+            path: '/note'
         }
     ])
 

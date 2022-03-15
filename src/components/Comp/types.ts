@@ -1,5 +1,8 @@
+import { Book } from '@/types/types'
+
 export interface CompProps {
-    onIncrement: () => void
-    count: number
     author: string
+    tableData: Book[]
+    handleCheck: () => void
+    handleEdit: (book: Book) => void
 }

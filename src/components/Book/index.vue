@@ -1,5 +1,14 @@
+<!--
+ * @Author: Armito
+ * @Date: 2022-02-10 19:51:46
+ * @LastEditTime: 2022-03-15 22:29:38
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \Vite-demo\src\components\Book\index.vue
+-->
 <script setup lang="ts" name="book">
 import { useBook } from './hooks'
+import Comp from '@/components/Comp/index'
 
 const {
     bookTitleInput,
@@ -8,7 +17,8 @@ const {
     bookList,
     bookNum,
     bookTitleDone,
-    addBook
+    addBook,
+    editBook
 } = useBook()
 </script>
 
@@ -35,6 +45,7 @@ const {
         {{ book.title }} : ￥{{ book.price || '?' }}
     </div>
     <div>共{{ bookNum }}本</div>
+    <Comp ref="compRef" author="okabe" @edit="editBook" />
 </template>
 
 <style scoped></style>

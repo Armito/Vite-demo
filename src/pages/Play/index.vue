@@ -1,11 +1,16 @@
 <script setup lang="ts" name="play">
+import { ref } from 'vue'
 import Book from '@/components/Book/index.vue'
 import Father from '@/components/Father/index.vue'
 import Slot from '@/components/Slot/index.vue'
-import Comp from '@/components/Comp/index.vue'
+import Comp from '@/components/Comp/index'
 import { usePlay } from './hooks'
 
 const { count } = usePlay()
+const compRef = ref()
+const tip = () => {
+    compRef.value.onIncrement?.()
+}
 </script>
 
 <template>
@@ -27,7 +32,8 @@ const { count } = usePlay()
                 <div>footer</div>
             </template>
         </Slot>
-        <Comp />
+        <el-button @click="tip"></el-button>
+        <Comp ref="compRef" author="okabe" />
         {{ count }}
     </div>
 </template>

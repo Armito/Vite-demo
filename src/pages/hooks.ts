@@ -19,6 +19,10 @@ export const usePage = () => {
         {
             label: 'To playtwo',
             path: '/playTwo'
+        },
+        {
+            label: 'To playthree',
+            path: '/playthree'
         }
     ])
 

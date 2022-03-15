@@ -1,5 +1,5 @@
 import { CompProps } from './types'
-import styles from './index.module.less'
+import styles from './style.module.less'
 
 const Comp = ({ onIncrement, count, author }: CompProps) => (
     <div class={styles.comp} onClick={onIncrement}>

@@ -1,5 +1,5 @@
 import { defineComponent } from 'vue'
-import Comp from './component'
+import Comp from './template'
 import { useComp } from './hooks'
 
 export default defineComponent({
@@ -14,7 +14,7 @@ export default defineComponent({
 
     setup({ author }, { expose }) {
         const { count, onIncrement } = useComp()
-        
+
         expose({ onIncrement })
 
         return () => (

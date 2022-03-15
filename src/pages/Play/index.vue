@@ -32,7 +32,7 @@ const tip = () => {
                 <div>footer</div>
             </template>
         </Slot>
-        <el-button @click="tip"></el-button>
+        <el-button @click="tip">++++</el-button>
         <Comp ref="compRef" author="okabe" />
         {{ count }}
     </div>

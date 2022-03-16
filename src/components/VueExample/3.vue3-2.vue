@@ -4,12 +4,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { useCount } from '@/hooks/useCount'
 
-const count = ref(0)
-const increment = () => {
-    count.value = count.value + 1
-}
+const { count, increment } = useCount()
 </script>
 
 <style scoped></style>

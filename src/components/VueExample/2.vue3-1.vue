@@ -4,14 +4,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent } from 'vue'
+import { useCount } from '@/hooks/useCount'
 
 export default defineComponent({
     setup() {
-        const count = ref(0)
-        const increment = () => {
-            count.value = count.value + 1
-        }
+        const { count, increment } = useCount()
 
         return {
             count,

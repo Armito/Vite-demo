@@ -10,6 +10,15 @@ interface Window {
     helloWorld: () => void
 }
 
+// 获取接口中指定属性的类型
 declare type TypeOfValue<T, K extends keyof T> = T[K]
 
-declare type PropertyToPartial<T, K extends keyof T> = T | { K?: T[K] }
+// 将接口中的指定类型变为可选
+declare type PropertyToPartial<T, K extends keyof T> = Omit<T, K> & {
+    [P in K]?: T[P]
+}
+
+// 给接口增加一个指定属性
+declare type AddProperty<T, K extends string | symbol, U> = K extends keyof T
+    ? T
+    : T & { [P in K]: U }

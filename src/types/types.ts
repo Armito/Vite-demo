@@ -22,7 +22,7 @@ export interface Book {
     price?: number
 }
 
-export type BookParams = Omit<Book, 'id'> & {
-    id?: string
-    success?: () => void
-}
+export type BookParams = PropertyToPartial<
+    AddProperty<Book, 'success', () => void>,
+    'id' | 'success'
+>

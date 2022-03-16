@@ -10,6 +10,19 @@
 import { useBook } from './hooks'
 import BookTable from '@/components/BookTable/index'
 
+const props = withDefaults(
+    defineProps<{
+        author: string
+    }>(),
+    {
+        author: 'Armito'
+    }
+)
+
+const emit = defineEmits<{
+    (event: 'edit'): void
+}>()
+
 const {
     bookTitleInput,
     bookPriceInput,
@@ -19,7 +32,9 @@ const {
     bookTitleDone,
     addBook,
     editBook
-} = useBook()
+} = useBook(props, emit)
+
+defineExpose({ editBook })
 </script>
 
 <template>
@@ -45,7 +60,7 @@ const {
         {{ book.title }} : ￥{{ book.price || '?' }}
     </div>
     <div>共{{ bookNum }}本</div>
-    <BookTable author="okabe" @edit="editBook" />
+    <BookTable :author="props.author" @edit="editBook" />
 </template>
 
 <style scoped></style>

@@ -8,9 +8,13 @@
  */
 import { computed, reactive, ref } from 'vue'
 import { useBookStore } from '@/store/bookStore'
+import { BookProps, BookEmits } from './types'
 import { Book, BookParams } from '@/types/types'
 
-export const useBook = () => {
+export const useBook = (props: BookProps, emit: BookEmits) => {
+    console.log(props)
+    console.log(emit)
+
     const bookTitleInput = ref()
 
     const bookPriceInput = ref()

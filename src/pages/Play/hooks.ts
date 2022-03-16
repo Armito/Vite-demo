@@ -1,5 +1,5 @@
-import { useImmutable } from '@/hooks/immutable'
-import { useRx } from '@/hooks/rx'
+import { useImmutable } from '@/hooks/useImmutable'
+import { useRx } from '@/hooks/useRx'
 
 export const usePlay = () => {
     useImmutable()

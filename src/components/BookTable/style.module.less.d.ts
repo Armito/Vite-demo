@@ -1,5 +1,6 @@
 interface Styles {
-    comp: string
+    header: string
+    footer: string
 }
 
 declare const styles: Styles

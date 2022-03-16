@@ -7,15 +7,16 @@
  * @FilePath: \Vite-demo\src\components\Book\index.vue
 -->
 <script setup lang="ts" name="book">
-import { useBook } from './hooks'
 import BookTable from '@/components/BookTable/index'
+import { useBook } from './hooks'
+import moment from 'moment'
 
 const props = withDefaults(
     defineProps<{
-        author: string
+        author?: string
     }>(),
     {
-        author: 'Armito'
+        author: 'Okabe'
     }
 )
 
@@ -33,6 +34,8 @@ const {
     addBook,
     editBook
 } = useBook(props, emit)
+
+const today = moment().format('YYYY-MM-DD HH:mm:ss')
 
 defineExpose({ editBook })
 </script>
@@ -60,7 +63,10 @@ defineExpose({ editBook })
         {{ book.title }} : ￥{{ book.price || '?' }}
     </div>
     <div>共{{ bookNum }}本</div>
-    <BookTable :author="props.author" @edit="editBook" />
+    <BookTable :author="props.author" @edit="editBook">
+        <template #header="data">{{ data.author }}</template>
+        <template #footer>{{ today }}</template>
+    </BookTable>
 </template>
 
 <style scoped></style>

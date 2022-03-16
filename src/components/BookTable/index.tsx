@@ -29,7 +29,8 @@ export default defineComponent({
             handleEdit 
         } = useBookTable(props, context)
 
-        return () => useTemplate({ 
+        return () => useTemplate({
+            context,
             author: props.author, 
             tableData: tableData.value, 
             handleCheck, 

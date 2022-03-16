@@ -8,7 +8,7 @@
 -->
 <script setup lang="ts" name="book">
 import { useBook } from './hooks'
-import Comp from '@/components/Comp/index'
+import BookTable from '@/components/BookTable/index'
 
 const {
     bookTitleInput,
@@ -45,7 +45,7 @@ const {
         {{ book.title }} : ￥{{ book.price || '?' }}
     </div>
     <div>共{{ bookNum }}本</div>
-    <Comp author="okabe" @edit="editBook" />
+    <BookTable author="okabe" @edit="editBook" />
 </template>
 
 <style scoped></style>

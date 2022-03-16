@@ -3,4 +3,4 @@ export interface Props {
     channel?: number
 }
 
-export type PropsValueTypeOfMsg = TypeOfValue<Props, 'msg'>
+export type PropsValueTypeOfMsg = TypeOfProperty<Props, 'msg'>

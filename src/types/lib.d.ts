@@ -11,7 +11,7 @@ interface Window {
 }
 
 // 获取接口中指定属性的类型
-declare type TypeOfValue<T, K extends keyof T> = T[K]
+declare type TypeOfProperty<T, K extends keyof T> = T[K]
 
 // 将接口中的指定类型变为可选
 declare type PropertyToPartial<T, K extends keyof T> = Omit<T, K> & {

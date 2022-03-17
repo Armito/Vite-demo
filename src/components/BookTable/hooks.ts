@@ -6,28 +6,26 @@
  * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  * @FilePath: \Vite-demo\src\components\BookTable\hooks.ts
  */
-import { computed, SetupContext } from 'vue'
+import { computed } from 'vue'
 import { useBookStore } from '@/store/bookStore'
 import { BookTableProps } from './types'
 import { Book } from '@/types/types'
 
 export const useBookTable = (
     props: BookTableProps,
-    { emit, expose }: SetupContext
+    emit: (event: 'check' | 'edit', ...args: any[]) => void
 ) => {
     const bookStore = useBookStore()
 
     const tableData = computed(() => bookStore.bookList)
 
     const handleCheck = (id: TypeOfProperty<Book, 'id'>) => {
-        console.log(id)
+        emit('check', id)
     }
 
     const handleEdit = (book: Book) => {
         emit('edit', book)
     }
-
-    expose({ handleCheck })
 
     return {
         tableData,

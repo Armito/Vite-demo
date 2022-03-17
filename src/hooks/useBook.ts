@@ -1,4 +1,5 @@
 import { useSessionStorage } from '@vueuse/core'
+import { v4 as uuidv4 } from 'uuid'
 import { Book, BookParams } from '@/types/types'
 
 export const useBook = () => {
@@ -22,7 +23,7 @@ export const useBook = () => {
                 })
             } else {
                 bookList.value.push({
-                    id: new Date().getTime() + Math.random() + '',
+                    id: uuidv4(),
                     title: title,
                     price: price
                 })

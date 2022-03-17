@@ -7,8 +7,9 @@
  * @FilePath: \Vite-demo\src\components\Comp\index.tsx
  */
 import { defineComponent } from 'vue'
-import Templ from './template'
 import { useBookTable } from './hooks'
+import { Book } from '@/types/types'
+import styles from './style.module.less'
 
 export default defineComponent({
     name: 'BookTable',
@@ -20,20 +21,45 @@ export default defineComponent({
         }
     },
 
+    emits: ['check', 'edit'],
+
     setup(props, context) {
+        const { 
+            slots, 
+            emit, 
+            expose 
+        } = context
+
         const { 
             tableData, 
             handleCheck, 
             handleEdit 
-        } = useBookTable(props, context)
+        } = useBookTable(props, emit)
+
+        expose({ handleCheck })
 
         return () => (
-            <Templ 
-                author={props.author} 
-                tableData={tableData.value} 
-                handleCheck={handleCheck} 
-                handleEdit={handleEdit} 
-            />
+            <>
+                <div class={styles.header} v-marker>
+                    {slots.header?.(props)}的书单
+                </div>
+                <el-table data={tableData.value}>
+                    <el-table-column prop="id" label="id" width="180" />
+                    <el-table-column prop="title" label="书名" width="180" />
+                    <el-table-column prop="price" label="价格" />
+                    <el-table-column fixed="right" label="操作" width="120">
+                        {{
+                            default: ({ row }: { row: Book }) => [
+                                <el-button type="text" size="small" onClick={() => handleCheck(row.id)}>Check</el-button>,
+                                <el-button type="text" size="small" onClick={() => handleEdit(row)}>Edit</el-button>
+                            ]
+                        }}
+                    </el-table-column>
+                </el-table>
+                <div class={styles.footer}>
+                    {slots.footer?.(props)}
+                </div>
+            </>
         )
     }
 })

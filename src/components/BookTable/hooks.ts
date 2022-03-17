@@ -13,7 +13,7 @@ import { Book } from '@/types/types'
 
 export const useBookTable = (
     props: BookTableProps,
-    { emit, expose }: SetupContext<'edit'[]>
+    { emit, expose }: SetupContext
 ) => {
     const bookStore = useBookStore()
 

@@ -36,7 +36,8 @@ module.exports = {
                 ignorePattern: '^_'
             }
         ],
-        endOfLine: 'off'
+        endOfLine: 'off',
+        'vue/attribute-hyphenation': 'off'
     },
     globals: {
         defineProps: 'readonly',

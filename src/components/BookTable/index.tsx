@@ -7,7 +7,7 @@
  * @FilePath: \Vite-demo\src\components\Comp\index.tsx
  */
 import { defineComponent } from 'vue'
-import { useTemplate } from './template'
+import Templ from './template'
 import { useBookTable } from './hooks'
 
 export default defineComponent({
@@ -20,8 +20,6 @@ export default defineComponent({
         }
     },
 
-    emits: ['edit'],
-
     setup(props, context) {
         const { 
             tableData, 
@@ -29,12 +27,13 @@ export default defineComponent({
             handleEdit 
         } = useBookTable(props, context)
 
-        return () => useTemplate({
-            context,
-            author: props.author, 
-            tableData: tableData.value, 
-            handleCheck, 
-            handleEdit 
-        })
+        return () => (
+            <Templ 
+                author={props.author} 
+                tableData={tableData.value} 
+                handleCheck={handleCheck} 
+                handleEdit={handleEdit} 
+            />
+        )
     }
 })

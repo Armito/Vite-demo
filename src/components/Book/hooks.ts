@@ -8,6 +8,7 @@
  */
 import { computed, reactive, ref } from 'vue'
 import { useBookStore } from '@/store/bookStore'
+import { rawRefs } from '@/utils/rawRefs'
 import { BookProps, BookEmits } from './types'
 import { Book, BookParams } from '@/types/types'
 
@@ -32,7 +33,7 @@ export const useBook = (props: BookProps, emit: BookEmits) => {
 
     const bookTitleDone = () => {
         if (bookStore.checkBookParams(newBook)) {
-            bookPriceInput.value.focus()
+            bookPriceInput.value?.focus()
         }
     }
 
@@ -42,7 +43,7 @@ export const useBook = (props: BookProps, emit: BookEmits) => {
             success: () => {
                 newBook.title = ''
                 newBook.price = 0
-                bookTitleInput.value.focus()
+                bookTitleInput.value?.focus()
             }
         })
     }
@@ -54,8 +55,10 @@ export const useBook = (props: BookProps, emit: BookEmits) => {
     }
 
     return {
-        bookTitleInput,
-        bookPriceInput,
+        ...rawRefs({
+            bookTitleInput,
+            bookPriceInput
+        }),
         newBook,
         bookList,
         bookNum,

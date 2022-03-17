@@ -1,16 +1,15 @@
 <script setup lang="ts">
 import { useSlot } from './hooks'
 
-const slotsProps = withDefaults(
-    defineProps<{
-        name?: string
-        hobby?: string[]
-    }>(),
-    {
-        name: 'Armito',
-        hobby: () => []
-    }
-)
+export interface SlotsProps {
+    name: string
+    hobby: string[]
+}
+
+const slotsProps = withDefaults(defineProps<SlotsProps>(), {
+    name: 'Armito',
+    hobby: () => []
+})
 
 const { age } = useSlot()
 </script>

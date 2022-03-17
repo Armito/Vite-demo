@@ -48,7 +48,9 @@ export default defineComponent({
                     bookTitleDone={bookTitleDone}
                     addBook={addBook}
                 />
+
                 <BookList bookList={bookList.value} bookNum={bookNum.value} />
+                
                 <BookTable author={author} onEdit={editBook}>
                     {{
                         header: (_author: typeof author) => _author,

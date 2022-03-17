@@ -10,6 +10,7 @@ export default defineConfig({
         vue(),
         VueSetupExtend(),
         Pages({
+            extensions: ['vue', 'tsx'],
             exclude: ['**/components/*.vue', '**/hooks/*.vue']
         }),
         VueJsx()

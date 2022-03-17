@@ -7,7 +7,7 @@
  * @FilePath: \Vite-demo\src\pages\Play\index.vue
 -->
 <script setup lang="ts" name="play">
-import Book from '@/components/Book/index.vue'
+import Book from '@/components/Book/index'
 import Father from '@/components/Father/index.vue'
 import Slot from '@/components/Slot/index.vue'
 import { usePlay } from './hooks'

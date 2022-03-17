@@ -23,7 +23,9 @@ export default defineComponent({
 
     emits: ['check', 'edit'],
 
-    setup(props, context) {
+    setup: (props, context) => {
+        const { author } = props
+
         const { 
             slots, 
             emit, 
@@ -41,7 +43,7 @@ export default defineComponent({
         return () => (
             <>
                 <div class={styles.header} v-marker>
-                    {slots.header?.(props)}的书单
+                    {slots.header?.(author)}的书单
                 </div>
                 <el-table data={tableData.value}>
                     <el-table-column prop="id" label="id" width="180" />

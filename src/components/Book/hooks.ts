@@ -7,7 +7,7 @@
  * @FilePath: \Vite-demo\src\components\Book\hooks.ts
  */
 import { computed, reactive, ref } from 'vue'
-import { useBookStore } from '@/store/bookStore'
+import { useBookStore } from '@/stores/bookStore'
 import { rawRefs } from '@/utils/rawRefs'
 import { BookProps, BookEmits } from './types'
 import { Book, BookParams } from '@/types/types'

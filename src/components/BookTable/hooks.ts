@@ -7,7 +7,7 @@
  * @FilePath: \Vite-demo\src\components\BookTable\hooks.ts
  */
 import { computed } from 'vue'
-import { useBookStore } from '@/store/bookStore'
+import { useBookStore } from '@/stores/bookStore'
 import { Book } from '@/types/types'
 import { BookTableProps, BookTableEmits } from './types'
 

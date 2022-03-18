@@ -7,7 +7,8 @@
  * @FilePath: \Vite-demo\src\components\Count\index.vue
 */
 import { defineComponent } from 'vue'
-import { useCount, useMessage } from './hooks'
+import { useCount } from '@/hooks/useCount'
+import { useMessage } from './hooks'
 
 export default defineComponent({
     name: 'Count',

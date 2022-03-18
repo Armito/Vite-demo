@@ -1,5 +1,5 @@
 /*
- * @Author: your name
+ * @Author: Armito
  * @Date: 2022-03-10 19:36:38
  * @LastEditTime: 2022-03-17 21:26:36
  * @LastEditors: Please set LastEditors
@@ -27,8 +27,8 @@ export default defineComponent({
                             </>
                         ),
                         default: () => (
-                            Array(4).fill('O-M').map(o => 
-                                <div key={o} class={[styles.item, styles.text]}>
+                            Array(4).fill('O-M').map((o, i) => 
+                                <div class={[styles.item, styles.text]} key={i}>
                                     { 'List item ' + o }
                                 </div>
                             )

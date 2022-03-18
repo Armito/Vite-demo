@@ -1,5 +1,5 @@
 /*
- * @Author: your name
+ * @Author: Armito
  * @Date: 2022-03-10 19:36:38
  * @LastEditTime: 2022-03-17 21:10:52
  * @LastEditors: your name
@@ -15,7 +15,7 @@ export default defineComponent({
     name: 'PlayTwo',
 
     setup: () => {
-        const fromNow = ref()
+        const fromNow = ref(moment('2022-03-10 16:30:00').fromNow())
 
         interval(1000).subscribe(() => {
             fromNow.value = moment('2022-03-10 16:30:00').fromNow()

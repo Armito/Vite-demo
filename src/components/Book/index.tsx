@@ -7,11 +7,10 @@
  * @FilePath: \Vite-demo\src\components\Book\index.vue
 */
 import { defineComponent } from 'vue'
-import BookPad from './components/BookPad/index'
-import BookList from './components/BookList/index'
-import BookTable from '@/components/BookTable/index'
+import BookPad from './components/BookPad'
+import BookList from './components/BookList'
+import BookTable from '@/components/BookTable'
 import { useBook } from './hooks'
-import moment from 'moment'
 
 export default defineComponent({
     name: 'Book',
@@ -35,10 +34,9 @@ export default defineComponent({
             bookNum,
             bookTitleDone,
             addBook,
-            editBook
+            editBook,
+            checkBook
         } = useBook(props, emit)
-
-        const today = moment().format('YYYY-MM-DD HH:mm:ss')
 
         return () => (
             <>
@@ -51,12 +49,15 @@ export default defineComponent({
 
                 <BookList bookList={bookList.value} bookNum={bookNum.value} />
                 
-                <BookTable author={author} onEdit={editBook}>
-                    {{
+                <BookTable
+                    v-slots={{
                         header: (_author: typeof author) => _author,
-                        footer: () => today
+                        footer: () => author
                     }}
-                </BookTable>
+                    author={author}
+                    onEdit={editBook}
+                    onCheck={checkBook}
+                />
             </>
         )
     }

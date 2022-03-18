@@ -7,9 +7,10 @@
  * @FilePath: \Vite-demo\src\pages\Play\index.vue
 */
 import { defineComponent } from "vue";
-import Book from '@/components/Book/index'
-import Father from '@/components/Father/index'
-import Slot from '@/components/Slot/index'
+import Book from '@/components/Book'
+import Father from '@/components/Father'
+import Slot from '@/components/Slot'
+import Pass from "@/components/Pass"
 import { usePlay } from './hooks'
 import { SlotsProps } from '@/components/Slot/types'
 
@@ -28,8 +29,11 @@ export default defineComponent({
                 <br />
                 <Book />
                 <Father />
-                <Slot class="aaa" name="Pikachu" hobby={['game']}>
-                    {{
+                <Slot
+                    class="aaa"
+                    name="Pikachu"
+                    hobby={['game']}
+                    v-slots={{
                         header: ({ name, hobby }: SlotsProps) => [
                             <div>header</div>,
                             <div>{ name }</div>,
@@ -37,8 +41,25 @@ export default defineComponent({
                         ],
                         footer: () => <div>footer</div>
                     }}
-                </Slot>
+                />
                 { count.value }
+                <Pass
+                    nameRenderer={
+                        <el-progress 
+                            percentage={84} 
+                            format={(percent: number) => (percent === 100 ? 'Full' : `${percent}%`)}
+                        />
+                    }
+                    effectRenderer={
+                        <el-progress percentage={50} status="exception" />
+                    }
+                    attackRenderer={
+                        (_percent) => [
+                            <span>{_percent}</span>,
+                            <el-progress percentage={_percent} status="warning" />
+                        ]
+                    }
+                />
             </div>
         )
     }

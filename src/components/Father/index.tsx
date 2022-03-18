@@ -7,7 +7,7 @@
  * @FilePath: \Vite-demo\src\components\Father\index.vue
 */
 import { defineComponent } from 'vue'
-import Count from '@/components/Count/index'
+import Count from '@/components/Count'
 import { useFather } from './hooks'
 
 export default defineComponent({

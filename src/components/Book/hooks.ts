@@ -54,6 +54,10 @@ export const useBook = (props: BookProps, emit: BookEmits) => {
         newBook.title = title
     }
 
+    const checkBook = (id: TypeOfProperty<Book, 'id'>) => {
+        console.log(id)
+    }
+
     return {
         ...rawRefs({
             bookTitleInput,
@@ -64,6 +68,7 @@ export const useBook = (props: BookProps, emit: BookEmits) => {
         bookNum,
         bookTitleDone,
         addBook,
-        editBook
+        editBook,
+        checkBook
     }
 }

@@ -8,13 +8,10 @@
  */
 import { computed } from 'vue'
 import { useBookStore } from '@/store/bookStore'
-import { BookTableProps } from './types'
 import { Book } from '@/types/types'
+import { BookTableProps, BookTableEmits } from './types'
 
-export const useBookTable = (
-    props: BookTableProps,
-    emit: (event: 'check' | 'edit', ...args: any[]) => void
-) => {
+export const useBookTable = (props: BookTableProps, emit: BookTableEmits) => {
     const bookStore = useBookStore()
 
     const tableData = computed(() => bookStore.bookList)

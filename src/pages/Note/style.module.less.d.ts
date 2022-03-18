@@ -8,9 +8,9 @@
  */
 interface Styles {
     'card-header': string
+    'box-card': string
     text: string
     item: string
-    'box-card': string
 }
 
 declare const styles: Styles

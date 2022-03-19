@@ -1,0 +1,34 @@
+// content
+.ellipsis-single-row {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.ellipsis-multi-row(@row) {
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: @row;
+    -webkit-box-orient: vertical;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// shape
+.square(@width, @height) {
+    display: block;
+    width: @width;
+    height: @height;
+}
+
+.circle(@radius) {
+    display: block;
+    width: @radius * 2;
+    height: @radius * 2;
+    border-radius: 50%;
+}

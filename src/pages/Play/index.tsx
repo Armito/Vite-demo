@@ -13,6 +13,7 @@ import Slot from '@/components/Slot'
 import Pass from "@/components/Pass"
 import { usePlay } from './hooks'
 import { SlotsProps } from '@/components/Slot/types'
+import styles from './style.module.less'
 
 export default defineComponent({
     name: 'Play',
@@ -60,6 +61,12 @@ export default defineComponent({
                         ]
                     }
                 />
+                <div class={styles.container1}>
+                    Where there is a will, there is a way~
+                </div>
+                <div class={styles.container2}>
+                    Where there is a will, there is a way~
+                </div>
             </div>
         )
     }

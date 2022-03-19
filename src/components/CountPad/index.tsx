@@ -7,11 +7,10 @@
  * @FilePath: \Vite-demo\src\components\Count\index.vue
 */
 import { defineComponent } from 'vue'
-import { useCount } from '@/hooks/useCount'
-import { useMessage } from './hooks'
+import { useCountPad } from './hooks'
 
 export default defineComponent({
-    name: 'Count',
+    name: 'CountPad',
 
     props: {
         msg: {
@@ -21,14 +20,23 @@ export default defineComponent({
     },
 
     setup: (props, context) => {
-        const { count, increment, decrement, double, divide } = useCount()
-
-        const { message, handleMsg } = useMessage(props)
-
         const { expose } = context
 
+        const { 
+            count,
+            increment,
+            decrement,
+            double,
+            divide,
+            message,
+            handleMsg
+        } = useCountPad(props)
+
         expose({
-            increment
+            increment,
+            decrement,
+            double,
+            divide
         })
 
         return () => (

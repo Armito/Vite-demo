@@ -7,20 +7,26 @@
  * @FilePath: \Vite-demo\src\components\Father\index.vue
 */
 import { defineComponent } from 'vue'
-import Count from '@/components/Count'
+import CountPad from '@/components/CountPad'
 import { useFather } from './hooks'
 
 export default defineComponent({
     name: 'Father',
 
     setup: () => {
-        const { countRef, msg, plus } = useFather()
+        const { 
+            countRef, 
+            msg, 
+            plus, 
+            minus 
+        } = useFather()
 
         return () => (
             <>
-                <Count ref={countRef} msg={msg.value} />
+                <CountPad ref={countRef} msg={msg.value} />
                 <div>
                     <el-button onClick={plus}>+++</el-button>
+                    <el-button onClick={minus}>---</el-button>
                 </div>
             </>
         )

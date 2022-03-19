@@ -7,12 +7,18 @@ export const useFather = () => {
 
     const plus = () => {
         countRef.value.increment?.()
-        msg.value = msg.value + '3'
+        msg.value = msg.value + '1'
+    }
+
+    const minus = () => {
+        countRef.value.decrement?.()
+        msg.value = msg.value + '-1'
     }
 
     return {
         countRef,
         msg,
-        plus
+        plus,
+        minus
     }
 }

@@ -24,9 +24,39 @@ export const useBookTable = (props: BookTableProps, emit: BookTableEmits) => {
         emit('edit', book)
     }
 
+    const tableColumns = [
+        {
+            prop: 'id',
+            label: 'id',
+            width: '180'
+        },
+        {
+            prop: 'title',
+            label: '书名',
+            width: '180'
+        },
+        {
+            prop: 'price',
+            label: '价格',
+        },
+        {
+            fixed: 'right',
+            label: '操作',
+            width: '120',
+            slots: {
+                default: ({ row }: { row: Book }) => [
+                    <el-button type="text" size="small" onClick={() => handleCheck(row.id)}>Check</el-button>,
+                    <el-button type="text" size="small" onClick={() => handleEdit(row)}>Edit</el-button>
+                ],
+                header: () => 'Operation'
+            }
+        },
+    ]
+
     return {
         tableData,
         handleCheck,
-        handleEdit
+        handleEdit,
+        tableColumns,
     }
 }

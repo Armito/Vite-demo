@@ -7,8 +7,8 @@
  * @FilePath: \Vite-demo\src\components\Comp\index.tsx
  */
 import { defineComponent } from 'vue'
+import ArTable from '@/components/ArTable/index'
 import { useBookTable } from './hooks'
-import { Book } from '@/types/types'
 import styles from './style.module.less'
 
 export default defineComponent({
@@ -34,30 +34,17 @@ export default defineComponent({
 
         const { 
             tableData, 
-            handleCheck, 
-            handleEdit 
+            tableColumns
         } = useBookTable(props, emit)
 
-        expose({ handleCheck })
+        expose({...useBookTable(props, emit)})
 
         return () => (
             <>
                 <div class={styles.header} v-marker>
                     {slots.header?.(author)}的书单
                 </div>
-                <el-table data={tableData.value}>
-                    <el-table-column prop="id" label="id" width="180" />
-                    <el-table-column prop="title" label="书名" width="180" />
-                    <el-table-column prop="price" label="价格" />
-                    <el-table-column fixed="right" label="操作" width="120">
-                        {{
-                            default: ({ row }: { row: Book }) => [
-                                <el-button type="text" size="small" onClick={() => handleCheck(row.id)}>Check</el-button>,
-                                <el-button type="text" size="small" onClick={() => handleEdit(row)}>Edit</el-button>
-                            ]
-                        }}
-                    </el-table-column>
-                </el-table>
+                <ArTable data={tableData.value} columns={tableColumns} />
                 <div class={styles.footer}>
                     {slots.footer?.(props)}
                 </div>

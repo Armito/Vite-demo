@@ -27,7 +27,7 @@ export const useBookTable = (props: BookTableProps, emit: BookTableEmits) => {
     const tableColumns = [
         {
             prop: 'id',
-            label: 'id',
+            label: 'Id',
             width: '180'
         },
         {

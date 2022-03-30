@@ -32,12 +32,7 @@ export default defineComponent({
             handleMsg
         } = useCountPad(props)
 
-        expose({
-            increment,
-            decrement,
-            double,
-            divide
-        })
+        expose({...useCountPad(props)})
 
         return () => (
             <>

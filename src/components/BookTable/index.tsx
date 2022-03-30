@@ -27,7 +27,10 @@ export default defineComponent({
         const { author } = props
 
         const { 
-            slots, 
+            slots: {
+                header: slotHeader,
+                footer: slotFooter
+            }, 
             emit, 
             expose 
         } = context
@@ -42,11 +45,16 @@ export default defineComponent({
         return () => (
             <>
                 <div class={styles.header} v-marker>
-                    {slots.header?.(author)}的书单
+                    {slotHeader?.(author)}的书单
                 </div>
-                <ArTable data={tableData.value} columns={tableColumns} />
+                <ArTable 
+                    data={tableData.value} 
+                    columns={tableColumns} 
+                    stripe 
+                    border 
+                />
                 <div class={styles.footer}>
-                    {slots.footer?.(props)}
+                    {slotFooter?.(props)}
                 </div>
             </>
         )

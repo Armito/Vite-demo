@@ -8,7 +8,9 @@ interface TableColumnSlot {
     }
 }
 
-const ArTable = defineComponent({
+export default defineComponent({
+    name: 'ArTable',
+
     props: {
         ...TableProps,
 
@@ -23,10 +25,13 @@ const ArTable = defineComponent({
 
         return () => (
             <el-table {...tableProps}>
-                {columns.map(columnProps => <el-table-column {...columnProps} v-slots={columnProps.slots} />)}
+                {columns.map(columnProps => (
+                    <el-table-column 
+                        {...columnProps} 
+                        v-slots={columnProps.slots} 
+                    />
+                ))}
             </el-table>
         )
     }
 })
-
-export default ArTable

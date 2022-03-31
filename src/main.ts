@@ -12,6 +12,7 @@ import router from './router'
 import { createPinia } from 'pinia'
 import registerDirectives from './directives'
 import elementPlus from 'element-plus'
+import ArComponent from './common/ArComponent'
 import './styles/global.less'
 import 'element-plus/theme-chalk/index.css'
 
@@ -20,4 +21,5 @@ createApp(App)
     .use(createPinia())
     .use(registerDirectives)
     .use(elementPlus)
+    .use(ArComponent)
     .mount('#app')

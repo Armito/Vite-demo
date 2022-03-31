@@ -7,8 +7,8 @@
  * @FilePath: \Vite-demo\src\pages\Note\index.tsx
  */
 import { defineComponent, ref, reactive, watch } from "vue"
-import ArForm from '@/components/ArForm/index'
-import { FormComponentType } from '@/components/ArForm/types'
+import { ArForm } from '@/common/ArComponent'
+import { FormComponentType } from '@/common/ArComponent/ArForm/types'
 import styles from './style.module.less'
 
 export default defineComponent({

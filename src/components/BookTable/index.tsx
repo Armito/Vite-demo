@@ -7,7 +7,7 @@
  * @FilePath: \Vite-demo\src\components\Comp\index.tsx
  */
 import { defineComponent } from 'vue'
-import ArTable from '@/components/ArTable/index'
+import { ArTable } from '@/common/ArComponent'
 import { useBookTable } from './hooks'
 import styles from './style.module.less'
 

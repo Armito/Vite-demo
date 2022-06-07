@@ -399,6 +399,11 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
+"@types/crypto-js@^4.1.1":
+  version "4.1.1"
+  resolved "http://npm.fe.flyudesk.com/@types%2fcrypto-js/-/crypto-js-4.1.1.tgz#602859584cecc91894eb23a4892f38cfa927890d"
+  integrity sha512-BG7fQKZ689HIoc5h+6D2Dgq1fABRa0RbBWKBd9SP/MVRVXROflpm5fhwyATX5duFmbStzyzyycPB8qUYKDH3NA==
+
 "@types/json-schema@^7.0.9":
   version "7.0.9"
   resolved "http://npm.fe.flyudesk.com/@types%2fjson-schema/-/json-schema-7.0.9.tgz#97edc9037ea0c38585320b28964dde3b39e4660d"
@@ -947,6 +952,11 @@ cross-spawn@^7.0.2:
     path-key "^3.1.0"
     shebang-command "^2.0.0"
     which "^2.0.1"
+
+crypto-js@^4.1.1:
+  version "4.1.1"
+  resolved "http://npm.fe.flyudesk.com/crypto-js/-/crypto-js-4.1.1.tgz#9e485bcf03521041bd85844786b83fb7619736cf"
+  integrity sha1-nkhbzwNSEEG9hYRHhrg/t2GXNs8=
 
 csstype@^2.6.8:
   version "2.6.19"

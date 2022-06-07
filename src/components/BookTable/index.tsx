@@ -8,6 +8,7 @@
  */
 import { defineComponent } from 'vue'
 import { ArTable } from '@/common/ArComponent'
+import ArTable2 from '@/common/Ar/ArTable/index.vue'
 import { useBookTable } from './hooks'
 import styles from './style.module.less'
 
